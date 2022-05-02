@@ -46,3 +46,10 @@ table {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
+.t-center {
+	text-align: center;
+}
+.d-flex {
+	display: flex;
+	justify-content: space-between;
+}
