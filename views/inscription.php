@@ -8,47 +8,51 @@
   <link rel="stylesheet" href="../style/main.css">
 </head>
 <body>
-  <div class="t-center">
-    <h2>Inscription</h2>
-    <h3>Inscrivez vous des maintenant pour pouvoir vous connecter.</h3>
-  </div>
-  <form action="">
-    <div class="d-flex">
-      <div>
-        <div>
-          <label for="">Votre prenom :</label>
-          <input type="text">
-        </div>
-        <div>
-          <label for="">Votre nom :</label>
-          <input type="text">
-        </div>
-        <div>
-          <label for="">Votre e-mail :</label>
-          <input type="text">
-        </div>
-        <div>
-          <label for="">Votre date de naissance :</label>
-          <input type="text">
-        </div>
-      </div>
-      <div>
-        <div>
-          <label for="">Votre mot de passe</label>
-          <input type="text">
-        </div>
-        <div>
-          <label for="">Confirmer votre mot de passe</label>
-          <input type="text">
-        </div>
-      </div>
-    </div>
+  <?php require '../component/header.php' ?>
+  <div class="container signin">
     <div class="t-center">
-      <div class="d-flex">
-        <input type="submit" value="S'inscrire">
-        <input type="text">
-      </div>
+      <h2>Inscription</h2>
+      <h3>Inscrivez vous des maintenant pour pouvoir vous connecter.</h3>
     </div>
-  </form>
+    <form action="">
+      <div class="d-flex">
+        <div>
+          <div class="d-flex column align-start">
+            <label for="">Votre prenom</label>
+            <input type="text">
+          </div>
+          <div class="d-flex column align-start">
+            <label for="">Votre nom</label>
+            <input type="text">
+          </div>
+          <div class="d-flex column align-start">
+            <label for="">Votre email</label>
+            <input type="text">
+          </div>
+          <div class="d-flex column align-start">
+            <label for="">Votre date de naissance :</label>
+            <input type="email">
+          </div>
+        </div>
+        <div>
+          <div class="d-flex column align-start">
+            <label for="">Votre mot de passe</label>
+            <input type="text">
+          </div>
+          <div class="d-flex column align-start">
+            <label for="">Confirmer votre mot de passe</label>
+            <input type="text">
+          </div>
+        </div>
+      </div>
+      <div class="t-center">
+        <div class="d-flex justify-center">
+          <input type="submit" value="S'inscrire">
+          <a href="#">Revenir au formulaire de connexion</a>
+        </div>
+      </div>
+    </form>
+  </div>
+  <?php require '../component/footer.php' ?>
 </body>
 </html>
