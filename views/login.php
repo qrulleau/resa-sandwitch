@@ -1,3 +1,9 @@
+<?php
+  require '../database/connexion.php';
+  require '../database/querie/querie.php';
+  displayAllProject();
+  var_dump($projects)
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
