@@ -11,15 +11,23 @@ function signinUser() {
   if (isset($firstName,$lastName,$lastName,$email,$password)) {
     $querie = 'insert into utilisateur (nom_user,prenom_user,password_user,email_user,role_user,active_user) values (?,?,?,?,?,?)';
     $statement = $databaseConnexion->prepare($querie);
-    $statement->execute(array($lastName,$firstName,$email,$password,'a',1));
+    $statement->execute(array($lastName,$firstName,$email,$password,'e',1));
   }
 
   
 }
 
-// function checkPassword(password){
-//   $specialCharacter = [[,!,@,[,$,%,^,&,*,(,),_,+,\,-,=,\,[,\,],{,},;,',:,",\,\,|,,,.,<,>,\,/,?,],+,/]'
-// }
+function checkPassword($password){
+  if (strlen($password) >= 8) {
+    if (preg_match("1234567890",$password)){
+      if (preg_match("/^\w*(?=\w*\d)(?=\w*[A-Z])(?=\w*[^0-9A-Za-z])(?=\w*[a-z])\w*$/", $password)) {
+        echo "votre mot de passe est valie";
+      } else {
+        echo "votre mot de passe est invalide";
+      }
+    }
+  }
+}
 
 function displayHomePage() {
   global $databaseConnexion,$projects;
