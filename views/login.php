@@ -1,8 +1,9 @@
 <?php
   require '../database/connexion.php';
   require '../database/querie/querie.php';
-  displayAllProject();
-  var_dump($projects)
+  // displayAllProject();
+  // var_dump($projects)
+  authentification();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,14 +23,14 @@
   <div class="d-flex container login">
     <div class="t-center connexion">
       <h2>Connectez-vous</h2>
-      <form action="">
+      <form method="post">
         <div class="d-flex column">
-          <label for="">Email :</label>
-          <input type="text" name="" id="" >
+          <label for="email">Email :</label>
+          <input type="text" name="email" id="email" >
         </div>
         <div class="d-flex column">
-          <label for="">Mot de passe :</label>
-          <input type="text" name="" id="">
+          <label for="password">Mot de passe :</label>
+          <input type="text" name="password" id="password">
         </div>
         <input type="submit" value="Se connecter">
       </form>

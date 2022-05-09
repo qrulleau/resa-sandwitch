@@ -1,3 +1,11 @@
+<?php
+
+require '../database/connexion.php';
+require '../database/querie/querie.php';
+
+signinUser();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,34 +22,30 @@
       <h2>Inscription</h2>
       <h3>Inscrivez vous des maintenant pour pouvoir vous connecter.</h3>
     </div>
-    <form action="">
+    <form method="get">
       <div class="d-flex">
         <div>
           <div class="d-flex column align-start">
-            <label for="">Votre prenom</label>
-            <input type="text">
+            <label for="firstName">Votre prenom</label>
+            <input type="text" id="firstName" name="firstName">
           </div>
           <div class="d-flex column align-start">
-            <label for="">Votre nom</label>
-            <input type="text">
+            <label for="lastName">Votre nom</label>
+            <input type="text" id="lastName" name="lastName">
           </div>
           <div class="d-flex column align-start">
-            <label for="">Votre email</label>
-            <input type="text">
-          </div>
-          <div class="d-flex column align-start">
-            <label for="">Votre date de naissance :</label>
-            <input type="email">
+            <label for="email">Votre email</label>
+            <input type="text" id="email" name="email">
           </div>
         </div>
         <div>
           <div class="d-flex column align-start">
-            <label for="">Votre mot de passe</label>
-            <input type="text">
+            <label for="password">Votre mot de passe</label>
+            <input type="text" id="password" name="password">
           </div>
           <div class="d-flex column align-start">
             <label for="">Confirmer votre mot de passe</label>
-            <input type="text">
+            <input type="text" id="" name="">
           </div>
         </div>
       </div>
