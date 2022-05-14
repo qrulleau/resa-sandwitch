@@ -1,43 +1,28 @@
 <?php
 
-require '../connexion.php';
-global $databaseConnexion;
-$id = $_GET['id'];
-$querie = 'DELETE FROM accueil where id_accueil = ?';
-$statement = $databaseConnexion->prepare($querie);
-$statement->execute(array($id));
-var_dump($id);
-header("location: ../../views/backoffice/backoffice.php");
-
-/* Delete user */ 
+require '../resa-sandwitch/database/connexion.php';
 
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "reservesandwich";
 
-try {
-  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-  // set the PDO error mode to exception
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  // sql to delete a record
-  $sql = "DELETE FROM utilisateur WHERE id_user=1";
+    // supprimer un utilisateur
+    $sql = "DELETE FROM utilisateur WHERE id_user=1";
 
-  // use exec() because no results are returned
-  $conn->exec($sql);
-  echo "Record deleted successfully";
-} catch(PDOException $e) {
-  echo $sql . "<br>" . $e->getMessage();
-}
+    // message de confirmation pour la suppression de l'utilisateur
+    $conn->exec($sql);
+    echo "Record deleted successfully";
 
-$conn = null;
+    $conn = null;
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Burger Code</title>
+        <title>Suppression d'un utilisateur</title>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
