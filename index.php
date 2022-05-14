@@ -10,22 +10,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet"> 
     <title>Document</title>
     <link rel="stylesheet" href="style/main.css">
   </head>
   <body>
     <?php require 'component/header.php'?>
-    <div class="t-center">
-      <h2>Bienvenue</h2>
-      <h3>Presentation du site :</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, aut. Commodi tempora voluptas fugit libero ipsam placeat incidunt excepturi modi maiores laudantium reiciendis unde iusto asperiores harum exercitationem quisquam, minima molestias atque eos ea consectetur hic dicta? Adipisci labore, itaque nobis dicta tempore exercitationem. Itaque corrupti similique harum dignissimos! Facilis maiores nihil sapiente, sequi ab nisi itaque corrupti. Voluptatibus quae iure modi labore fuga quia eaque ipsum earum quo mollitia, ut in alias beatae quisquam cupiditate rerum ex ad eligendi id magni suscipit tempora molestias aliquam. Aspernatur expedita doloribus, ratione assumenda molestias nihil aliquid possimus doloremque. Optio reprehenderit, culpa nesciunt id libero aut molestiae architecto possimus voluptatum nihil facilis iure veniam consequatur ratione ducimus aspernatur nostrum. Rerum in porro totam sequi voluptatem! Cupiditate blanditiis ipsa porro obcaecati fugit nihil cumque aperiam? Beatae quis qui debitis, molestiae distinctio eaque excepturi illum odit quisquam perspiciatis dicta quaerat, ab architecto molestias ullam odio.</p>
-      <h3>Voici le menu de la semaine</h3>
-      <a href="assets/menu.pdf">
-        <img src="assets/menu.png" alt="">
-      </a>
+    <div class="homePage">
+      <h2 class="t-center">Bienvenue sur la sandwicherie du<br>lycee st-vincent</h2>
+      <div class="container">
+        <div class="d-flex">
+          <div>
+            <p>Un dejeuner simple, rapide ? reserver votre sanwitch !</p>
+            <div class="d-flex call-to-action">
+              <a class="empty" href="">commander</a>
+              <button class="full cafeteria">menu de la cantine</button>
+            </div>
+            <div class="planning">
+              <h3>informations</h3>
+              <p>Du lundi au dimanche, de 12h30 à 13h30</p>
+              <p>Rez-de-chaussée du batiment Saint-Louis</p>
+              <p>Sandwichs faits sur place par nos chefs / à emporter/  formule déjeuner</p>
+            </div>
+          </div>
+          <div>
+            <img src="assets/accueil.jpg" class="shadow" alt="">
+          </div>
+        </div>
+      </div>
     </div>
     
     <?php require 'component/footer.php'?>
+
+    <div class="modal-cafeteria d-flex justify-center display-none">
+      <div class="background-color">
+        <div class="relative-position">
+        <embed src="assets/menu.pdf" width="1300" height="850px" type="application/pdf">
+          <div class="absolute-position">
+            <img src="assets/icon/cancel.svg" class="cancel" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="script/main.js"></script>
   </body>
