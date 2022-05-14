@@ -8,4 +8,4 @@ explaination of the architectur :
 **Script :** Javascript file\
 **Style :** all the css style\
 **views :** Where you put all of the front page and separate by their fonctionnality\
-**env.php :** file you need to connect with your database\
+**env.php :** file you need to connect with your database
