@@ -1,6 +1,7 @@
 <?php
 
 require '../resa-sandwitch/database/connexion.php';
+require (__DIR__ . '../../env.php');
 
 $servername = "localhost";
 $username = "root";
