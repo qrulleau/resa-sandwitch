@@ -280,8 +280,211 @@ body.update {
 }
 .body-tab {
 	margin-bottom: 50px;
-	background-color: #fff;
 }
+
+/********************************************************************/
+/* TB Réservation individuelle CSS */
+
+/* Disposition de la page à partir de la version ordinateur 768px */
+@media (min-width: 768px) {
+	#bodyReserv {
+		display: flex;
+	}
+	#secReserv {
+		width: 100%;
+		padding: 50px 100px 70px 100px;
+	}
+	.itemInfo {
+		width: 33%;
+		padding: 0px 2% 2% 0px ;
+	}
+}
+/* Disposition de la page jusqu'à la version tablette 767px */
+@media (max-width: 767px) {
+	#secReserv {
+		padding: 50px 20px 70px 20px;
+	}
+	.itemInfo {
+		width: 50%;
+		padding: 0px 3% 3% 0px ;
+	}
+}
+
+/* Section d'affichage des produits */
+#secReserv {
+	width: 100%;
+}
+/* Titre des divisions */
+#secReserv h2 {
+	margin-bottom: 50px;
+	font-family: Montserrat, sans-serif ;
+	text-align: center;
+}
+#secReserv h3 {
+	font-family: Montserrat, sans-serif ;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	text-decoration: underline;
+}
+
+/* Division principale de chaque sections */
+.divPrincipale {
+	width: 100%;
+}
+/* Mise en place des div en responsive */
+.sousDivSand {
+	display: flex;
+	flex-flow: row wrap;
+	width: 100%;
+}
+
+/* Affichage des divisions concernant les infos de item afficher */
+.divItemInfo {
+	border: 1px solid black;
+	border-radius: 10px;
+	box-shadow: 10px 5px 5px grey;
+	background-color: #eeeeee;
+}
+/* Image pour l'affichage des produits */
+#secReserv img{
+	width: 100%;
+	height: 80%;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.itemDesc p {
+	padding: 5px;
+}
+
+/* Formulaire de saisie du repas */
+/* Titre du formulaire */
+#formSaisieInfo h3 {
+	font-family: Montserrat, sans-serif ;
+	margin-top: 50px;
+	text-decoration: underline;
+	text-align: center;
+}
+/* Disposition du formulaire */
+.saisieInfo {
+	width: 100%;
+	height: 400px;
+}
+.divSaisieInfo {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 30px;
+}
+.saisieList {
+	display: flex;
+	flex-direction: column;
+	width: 200px;
+}
+.saisieList label {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+/* Affichage des menus déroulants */
+.optionMenu {
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: 1px solid black;
+	text-align: left;
+}
+.optionMenu:active {
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: 1px solid black;
+	text-align: left;
+}
+/* Etoile du champ obligatoire */
+.obligation {
+	color: red;
+}
+
+/* Texte d'erreur de saisie */
+.blockTimeSaisie {
+	text-align: center;
+	font-size: 14px;
+	font-style: italic;
+	margin-top: 10px;
+}
+.erreurForm {
+	color: red;
+	font-size: 12px;
+	font-style: italic;
+	font-weight: bold;
+	margin-top: 5px;
+}
+
+/* Div englobant le boutton d'envoi du formulaire */
+.sendForm {
+	text-align: center;
+	width: 100%;
+}
+/* Boutton d'envoi du formulaire */
+.sendButton {
+	background-color: green;
+	border: none;
+	color: white;
+	padding: 7px 10px;
+	border-radius: 3px;
+	margin-top: 50px;
+}
+
+/* Modale de vérification de commande */
+#verifCommande {
+	margin: 50px auto 0px auto;
+	padding: 20px;
+	background-color: lightgrey;
+	border: 2px solid black;
+	border-radius: 10px;
+	width: 400px;
+	height: 175px;
+	text-align: center;
+}
+.buttonVerif {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+}
+/* Boutton de la modal */
+.buttonMod {
+	background-color: white;
+	border: 1px solid black;
+	color: black;
+	width: 50px;
+	height: 30px;
+	border-radius: 3px;
+	margin-top: 50px;
+}
+/* Boutton pour fermer la modal */
+#verifCommande h5{
+	font-size: 20px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/* Boutton pour revenir en arrière */
+.back {
+	margin-top: 50px;
+	padding: 7px 10px;
+	border: none;
+	background-color: grey;
+	color: white;
+	text-decoration: none;
+	border-radius: 3px;
+}
+.back:hover {
+	color: white;
+	text-decoration: none;
+}
+
+/*********************************************************************/
+
 .signin {
 	margin-left: 140px;
 }
@@ -340,6 +543,7 @@ body.update {
 .update h3 {
 	margin-bottom: 16px;
 	font-weight: inherit;
+
 }
 @media screen and (max-width: 1330px) {
 	.homePage .container {

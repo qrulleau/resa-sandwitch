@@ -8,6 +8,26 @@ function checkPassword($password){
   $number = "(1|2|3|4|5|6|7|8|9|0)";
   $checkPass = false;
 
+/** Fonction de vérification des charactères du formulaires **/
+function verifyInput($var)
+{
+    $var = htmlentities($var);
+    $var = trim($var);
+    $var = strip_tags($var);
+    $var = stripslashes($var);
+    $var = htmlspecialchars($var);
+    return $var;
+}
+
+/** Fonction de récupération de l'id de l'utilisateur **/
+function getID($var)
+{
+  if (!empty($_GET['id'])) 
+  {
+      $var = verifyInput($_GET['id']);
+  }
+  return $var;
+}
       
 }
 function signinUser() {

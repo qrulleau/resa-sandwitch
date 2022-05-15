@@ -1,6 +1,6 @@
 <?php 
 
-$user = 'qrulleau';
+$user = 'root';
 $pass = 'root';
 $server = 'localhost';
 $database = 'reservesandwich';
