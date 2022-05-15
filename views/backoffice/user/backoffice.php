@@ -5,6 +5,7 @@ require (__DIR__ . '../../../../database/querie/querie.php');
 
 
 displayHomePage();
+
 ?>
 
 <!DOCTYPE html>

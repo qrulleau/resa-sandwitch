@@ -22,8 +22,8 @@
       <div>
         <h5 class="title">Suivez-nous</h5>
         <div class="d-flex social-link justify-center">
-          <a href=""><img src="../assets/icon/icon-facebook.svg" alt=""></a>
-          <a href=""><img src="../assets/icon/icon-twitter.svg" alt=""></a>
+          <a href=""><img src="http://localhost/projetFinal/assets/icon/icon-facebook.svg" alt=""></a>
+          <a href=""><img src="http://localhost/projetFinal/assets/icon/icon-twitter.svg" alt=""></a>
         </div>
       </div>
     </div>

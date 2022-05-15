@@ -1,4 +1,7 @@
 <?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
     require (__DIR__ . '../../../../database/connexion.php');
     require (__DIR__ . '../../../../database/querie/querie.php');
@@ -7,17 +10,6 @@
     if (!empty($_GET['id'])) 
     {
         $id = verifyInput($_GET['id']);
-    }
-
-    /** Fonction de vérification des charactères du formulaires **/
-    function verifyInput($var)
-    {
-        $var = htmlentities($var);
-        $var = trim($var);
-        $var = strip_tags($var);
-        $var = stripslashes($var);
-        $var = htmlspecialchars($var);
-        return $var;
     }
 
     // Variable permettant l'envoi du formulaire en fonction des fonction de vérification
@@ -39,16 +31,18 @@
     // Variable pour la disponibilité des produits
     $dispo = "Non";
 
-    if (!empty($_POST)) 
-    {
+    // var_dump($_GET['boissonerror']);
 
+    if (isset($_GET['submit'])) 
+    {
+        echo 'bonjour';
         // Variable associé au formulaire
-        $sandwichForm = verifyInput($_POST['selectSandwich']);
-        $boissonForm = verifyInput($_POST['selectBoisson']);
-        $dessertForm = verifyInput($_POST['selectDessert']);
-        $chipsForm = verifyInput($_POST['selectChips']);
-        $dateForm = $_POST['selectDate'];
-        $timeForm = $_POST['selectTime'];
+        $sandwichForm = verifyInput($_GET['selectSandwich']);
+        $boissonForm = verifyInput($_GET['selectBoisson']);
+        $dessertForm = verifyInput($_GET['selectDessert']);
+        $chipsForm = verifyInput($_GET['selectChips']);
+        $dateForm = $_GET['selectDate'];
+        $timeForm = $_GET['selectTime'];
 
         $conversionDate = strtotime($dateForm);
         $jourLivraison = date("w", $conversionDate);
@@ -120,13 +114,15 @@
                 $isSuccess = false;
             }
         }
+        var_dump($boissonForm);
         if ($isSuccess)
         {
             $annule_com = 0;
             /** Saisie des données du formulaire **/
             $saisieProjet = $databaseConnexion->prepare("INSERT INTO commande(fk_user_id, fk_sandwich_id, fk_boisson_id, fk_dessert_id, chips_com, date_heure_com, date_heure_livraison_com, annule_com) VALUES(?,?,?,?,?,?,?,?);");
             $saisieProjet->execute(array($id, $sandwichForm, $boissonForm, $dessertForm, $chipsForm, $dateTimeNow, $dateTimeForm, $annule_com));
-            header("Location: reservIndivi.php");
+            header("Location: reservIndivi.php?$id");
+            echo 'commande bien passer';
             $sendForm = "Votre réservation a bien été enregistrée !";
         }
     }
@@ -156,12 +152,12 @@
             
             <div class="d-flex column align-start">
                 <div class="logo t-center">
-                    <img src="http://localhost/projetFinal/assets/logo.png" alt="">
+                    <img src="assets/logo.png" alt="">
                     <h1 class="playfair">Lycée Saint-Vincent</h1>
                     <p>Enseignement secondaire & supérieur</p>
                 </div>
                 <a href="../index.php">Accueil</a>
-                <a href="../../database/processing/deconnexion.php" class="logOut">Se deconnecter</a>
+                <a href="../../../database/processing/deconnexion.php" class="logOut">Se deconnecter</a>
             </div>
         </header>
 
@@ -263,7 +259,7 @@
             </div>
 
             <!-- Formulaire pour la commande individuelle -->
-            <form id="formSaisieInfo" method="POST" action="<?php echo $_SERVER['PHP_SELF'];?>" role="form">
+            <form id="formSaisieInfo" method="get" action="<?php echo $_SERVER['PHP_SELF'];?>" role="form">
                 <h3>Choisissez votre repas :</h3>
                 <div class="saisieInfo">
                     <!-- Div de liste déroulante pour les sanwichs et les desserts -->

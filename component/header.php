@@ -6,8 +6,8 @@
         <h1 class="playfair">Lycée Saint-Vincent</h1>
         <p class="">Enseignement secondaire & supérieur</p>
       </div>
-      <a href="../index.php">Accueil</a>
+      <a href="http://localhost/projetFinal/">Accueil</a>
     </div>
-    <a href="views/login/login.php">Se connecter / s'inscrire</a>
+    <a href="http://localhost/projetFinal/views/login/login.php">Se connecter / s'inscrire</a>
   </div>
 </header>

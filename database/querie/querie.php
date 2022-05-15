@@ -28,8 +28,7 @@ function verifID()
         exit();
     }
 }
-      
-}
+
 function signinUser() {
   global $databaseConnexion,$validation,$error;
 
@@ -152,9 +151,9 @@ function authentification (){
 
 
     if (password_verify($password,$user_password)) {
-      header('location: http://localhost/resa-sandwitch/views/backoffice/user/backoffice.php');
+      header('location: http://localhost/projetFinal/views/backoffice/user/backoffice.php');
       session_start();
-      $_SESSION['ident'] = $id;
+      // $_SESSION['ident'] = $id;
     } else {
       echo 'mauvais login ou mot de passe';;
     }
@@ -163,7 +162,7 @@ function authentification (){
 }
 function authentificationAdmin (){
 
-  global $databaseConnexion;
+  global $databaseConnexion,$loginAdminError;
 
   $password = $_POST['password'];
   $email = $_POST['email'];
@@ -181,10 +180,10 @@ function authentificationAdmin (){
 
 
     if (password_verify($password,$password_user) && $role_user == 'a') {
-      header('location: http://localhost/resa-sandwitch/views/backoffice/admin/backoffice.php');
+      header('location: http://localhost/projetFinal/views/backoffice/admin/backoffice.php');
       session_start();
     } else {
-      echo 'mauvais login ou mot de passe';;
+      $loginAdminError =  'mauvais login ou mot de passe';
     }
 
   }
