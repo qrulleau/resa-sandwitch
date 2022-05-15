@@ -6,6 +6,6 @@
         <p>Enseignement secondaire & supérieur</p>
       </div>
       <a href="../index.php">Accueil</a>
-    <a href="../../database/processing/deconnexion.php">Se deconnecter</a>
+    <a href="../../../database/processing/deconnexion.php">Se deconnecter</a>
   </div>
 </header>
