@@ -18,6 +18,11 @@ displayUtilisateurPage();
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet"> 
   <title>Document</title>
   <link rel="stylesheet" href="../../../style/main.css">
+  <style>
+    .backoffice .container {
+      margin-top: 60px;
+    }
+  </style>
 </head>
 <body class="backoffice user">
   <div class="d-flex align-start">
@@ -43,7 +48,7 @@ displayUtilisateurPage();
             <p>nom_user</p>
           </div>
           <div class="col action">
-            <p>active_user</p>
+            <p>action</p>
           </div>
         </div>
       </div>
