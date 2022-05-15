@@ -8,6 +8,6 @@
       </div>
       <a href="../index.php">Accueil</a>
     </div>
-    <a href="../views/login/login.php">Se connecter / s'inscrire</a>
+    <a href="views/login/login.php">Se connecter / s'inscrire</a>
   </div>
 </header>
