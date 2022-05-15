@@ -125,6 +125,7 @@ footer .container {
 }
 footer h5.title {
 	margin-bottom: 20px;
+	font-weight: 600;
 }
 footer p, footer a {
 	line-height: 160%;
@@ -223,6 +224,7 @@ body.update {
 	margin-bottom: 60px;
 	line-height: 132%;
 	font-weight: 600;
+	padding: 0 30px;
 }
 .homePage .container {
 	width: 1300px;
@@ -338,4 +340,37 @@ body.update {
 .update h3 {
 	margin-bottom: 16px;
 	font-weight: inherit;
+}
+@media screen and (max-width: 1330px) {
+	.homePage .container {
+		width: 100%;
+		padding: 0 30px;
+	}
+	.homePage .container > .d-flex {
+		gap: 30px;
+	}
+}
+@media screen and (max-width:1230px){
+	footer .container {
+		width: calc(100% - 30px);
+	}
+	footer .container > .d-flex {
+		gap: 30px;
+		flex-wrap: wrap;
+	}
+}
+@media screen and (max-width: 1200px){
+	.homePage .container > .d-flex {
+		flex-direction: column;
+	}
+}
+@media screen and (max-width:650px){
+	.homePage img {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 535px) {
+	.homePage .call-to-action {
+		flex-direction: column;
+	}
 }

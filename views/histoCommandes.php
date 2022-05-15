@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('database/connexion.php');
+include('../database/connexion.php');
 if ($_SESSION['role'] == "a" | $_SESSION['role'] == "e"){
 
 ?>
