@@ -5,7 +5,6 @@ require (__DIR__ . '../../../../database/querie/querie.php');
 
 displayUtilisateurPage();
 
-var_dump($utilisateurs);
 ?>
 
 <!DOCTYPE html>
@@ -19,12 +18,18 @@ var_dump($utilisateurs);
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet"> 
   <title>Document</title>
   <link rel="stylesheet" href="../../../style/main.css">
+  <style>
+    .backoffice .container {
+      margin-top: 60px;
+    }
+  </style>
 </head>
-<body class="backoffice_user">
+<body class="backoffice user">
   <div class="d-flex align-start">
     <?php require (__DIR__ . '../../../../component/header-backoffice.php'); ?>
 
     <div class="container">
+      <a href="../../../database/processing/user-backoffice.php/insert.php">Ajouter un utilisateur</a>
       <div class="header-tab white">
         <div class="d-flex t-center">
           <div class="col id_accueil">
@@ -43,10 +48,7 @@ var_dump($utilisateurs);
             <p>nom_user</p>
           </div>
           <div class="col action">
-            <p>password_user</p>
-          </div>
-          <div class="col action">
-            <p>active_user</p>
+            <p>action</p>
           </div>
         </div>
       </div>
@@ -70,9 +72,6 @@ var_dump($utilisateurs);
           </div>
           <div class="col lien_pdf">
             <p><?php echo $utilisateur['nom_user'] ?></p>
-          </div>
-          <div class="col lien_pdf">
-            <p><?php echo $utilisateur['password_user'] ?></p>
           </div>
           <div class="col action">
             <div class="d-flex justify-center">

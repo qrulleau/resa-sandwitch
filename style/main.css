@@ -264,6 +264,9 @@ body.update {
 .col.action a:hover, a.underline:hover {
 	border-bottom: 1px solid black;
 }
+.user .col {
+	width: calc(100%/6);
+} 
 .border {
 	border-bottom: 1px solid #D0D0D0;
 	border-left: 1px solid #D0D0D0;
