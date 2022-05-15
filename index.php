@@ -1,6 +1,8 @@
 <?php
 
-// require_once 'database/connexion.php';
+require 'database/connexion.php';
+require 'database/querie/querie.php';
+displayHomePage();
 
 ?>
 
@@ -23,7 +25,7 @@
       <div class="container">
         <div class="d-flex">
           <div>
-            <p>Un dejeuner simple, rapide ? reserver votre sanwitch !</p>
+            <p><?php echo $projects[0]['texte_accueil']?></p>
             <div class="d-flex call-to-action">
               <a class="empty" href="">commander</a>
               <button class="full cafeteria">menu de la cantine</button>
@@ -37,6 +39,8 @@
           </div>
           <div>
             <img src="assets/accueil.jpg" class="shadow" alt="">
+            <?php echo "<img src='assets/{$projects[0]["lien_pdf"]}' alt=''>" ?>;
+
           </div>
         </div>
       </div>
