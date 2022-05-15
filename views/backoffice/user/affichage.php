@@ -1,3 +1,7 @@
+<?php 
+    require '../../../database/connexion.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,7 +13,7 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
       <script src="https://kit.fontawesome.com/568733c487.js" crossorigin="anonymous"></script>
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-      <link rel="stylesheet" href="/style/affichage.css">
+      <link rel="stylesheet" href="../../../style/affichage.css">
     </head>
     
     <body>
@@ -21,8 +25,9 @@
             <br>
             <?php
 
-              require '../connexion.php';
+
               $statement = $db->query("SELECT * FROM utilisateur");
+              $statement->execute();
               while ($item = $statement->fetch())
               {
                 echo "<div class='test2'>";
