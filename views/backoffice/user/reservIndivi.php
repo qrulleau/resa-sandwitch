@@ -1,11 +1,24 @@
 <?php 
 
-    require ('admin/connexion.php');
-    require ('querie.php');
+    require (__DIR__ . '../../../../database/connexion.php');
+    require (__DIR__ . '../../../../database/querie/querie.php');
 
     // Récupération de l'ID
-    //$id = getID();
-    $id = 1;
+    if (!empty($_GET['id'])) 
+    {
+        $id = verifyInput($_GET['id']);
+    }
+
+    /** Fonction de vérification des charactères du formulaires **/
+    function verifyInput($var)
+    {
+        $var = htmlentities($var);
+        $var = trim($var);
+        $var = strip_tags($var);
+        $var = stripslashes($var);
+        $var = htmlspecialchars($var);
+        return $var;
+    }
 
     // Variable permettant l'envoi du formulaire en fonction des fonction de vérification
     $isSuccess = true;
@@ -131,7 +144,7 @@
         <meta name="viewport" content="width=device-width, initiale-scale=1"/>
 
         <!-- Lien pour fichier CSS et Langue défini en Français -->
-        <link href="main.css" rel="stylesheet">
+        <link href="../../../style/main.css" rel="stylesheet">
 
         <meta charset="utf-8"/>
         <title>Lycée Saint-Vincent réservation sandwich</title>
@@ -174,7 +187,7 @@
                             echo "<div class='itemInfo'>";
                                 echo "<div class='divItemInfo'>";
                                     // Div englobant les infos et l'image de l'item
-                                    echo "<img src='assets/menu/sandwich/" . $item['img_sandwich'] . "' alt='Image de sandwich'>";
+                                    echo "<img src='../../../assets/menu/sandwich/" . $item['img_sandwich'] . "' alt='Image de sandwich'>";
                                     echo "<div class='itemDesc'>";
                                         // Infos du sandwich
                                         echo "<p>" . $item['nom_sandwich'] . "</p>";
@@ -205,7 +218,7 @@
                             echo "<div class='itemInfo'>";
                                 echo "<div class='divItemInfo'>";
                                     // Div englobant les infos et l'image de l'item
-                                    echo "<img src='assets/menu/dessert/" . $item['img_dessert'] . "' alt='Image de dessert'>";
+                                    echo "<img src='../../../assets/menu/dessert/" . $item['img_dessert'] . "' alt='Image de dessert'>";
                                     echo "<div class='itemDesc'>";
                                         // Infos du dessert
                                         echo "<p>" . $item['nom_dessert'] . "</p>";
@@ -236,7 +249,7 @@
                             echo "<div class='itemInfo'>";
                                 echo "<div class='divItemInfo'>";
                                     // Div englobant les infos et l'image de l'item
-                                    echo "<img src='assets/menu/boisson/" . $item['img_boisson'] . "' alt='Image de la boisson'>";
+                                    echo "<img src='../../../assets/menu/boisson/" . $item['img_boisson'] . "' alt='Image de la boisson'>";
                                     echo "<div class='itemDesc'>";
                                         // Infos de la boisson
                                         echo "<p>" . $item['nom_boisson'] . "</p>";
@@ -360,7 +373,7 @@
                 </div>
             </form>
             <!-- Button pour fermer la modal d'ajout -->
-            <a href="" class="back">Annuler la commande</a>
+            <a href="../../../views/backoffice/user/backoffice.php" class="back">Annuler la commande</a>
         </section>
     </body>
 </html>

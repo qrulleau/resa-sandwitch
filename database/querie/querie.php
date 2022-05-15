@@ -1,6 +1,5 @@
 <?php
 
-
 function checkPassword($password){
   global $validation,$error;
 
@@ -19,14 +18,14 @@ function verifyInput($var)
     return $var;
 }
 
-/** Fonction de récupération de l'id de l'utilisateur **/
-function getID($var)
+/** Fonction de vérification du droit de l'utilisateur **/
+function verifID()
 {
-  if (!empty($_GET['id'])) 
-  {
-      $var = verifyInput($_GET['id']);
-  }
-  return $var;
+  if(!isset($_SESSION['ident']))
+    {
+        header("Location: formulaireCo.php");
+        exit();
+    }
 }
       
 }
@@ -69,7 +68,7 @@ function signinUser() {
 
 function displayHomePage() {
   global $databaseConnexion,$projects;
-  $querie = 'select * FROM  accueil';
+  $querie = 'select * FROM accueil';
   $statement = $databaseConnexion->prepare($querie);
   $statement->execute();
   $projects = $statement->fetchAll();
@@ -152,8 +151,9 @@ function authentification (){
 
 
     if (password_verify($password,$user_password)) {
-      header('location: backoffice/backoffice.php');
+      header('location: http://localhost/resa-sandwitch/views/backoffice/user/backoffice.php');
       session_start();
+      $_SESSION['ident'] = $id;
     } else {
       echo 'mauvais login ou mot de passe';;
     }
@@ -180,7 +180,7 @@ function authentificationAdmin (){
 
 
     if (password_verify($password,$password_user) && $role_user == 'a') {
-      header('location: backoffice/backoffice.php');
+      header('location: http://localhost/resa-sandwitch/views/backoffice/admin/backoffice.php');
       session_start();
     } else {
       echo 'mauvais login ou mot de passe';;
