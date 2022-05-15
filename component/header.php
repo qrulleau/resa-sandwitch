@@ -4,10 +4,10 @@
       <div class="logo t-center">
         <img src="../assets/logo.png" alt="">
         <h1 class="playfair">Lycée Saint-Vincent</h1>
-        <p>Enseignement secondaire & supérieur</p>
+        <p class="">Enseignement secondaire & supérieur</p>
       </div>
       <a href="../index.php">Accueil</a>
     </div>
-    <a href="../views/login.php">Se connecter</a>
+    <a href="../views/login/login.php">Se connecter / s'inscrire</a>
   </div>
 </header>
