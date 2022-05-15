@@ -286,29 +286,9 @@ body.update {
 /* TB Réservation individuelle CSS */
 
 /* Disposition de la page à partir de la version ordinateur 768px */
-@media (min-width: 768px) {
-	#bodyReserv {
-		display: flex;
-	}
-	#secReserv {
-		width: 100%;
-		padding: 50px 100px 70px 100px;
-	}
-	.itemInfo {
-		width: 33%;
-		padding: 0px 2% 2% 0px ;
-	}
-}
+
 /* Disposition de la page jusqu'à la version tablette 767px */
-@media (max-width: 767px) {
-	#secReserv {
-		padding: 50px 20px 70px 20px;
-	}
-	.itemInfo {
-		width: 50%;
-		padding: 0px 3% 3% 0px ;
-	}
-}
+
 
 /* Section d'affichage des produits */
 #secReserv {
@@ -568,9 +548,35 @@ body.update {
 		flex-direction: column;
 	}
 }
+@media (min-width: 768px) {
+	#bodyReserv {
+		display: flex;
+	}
+	#secReserv {
+		width: 100%;
+		padding: 50px 100px 70px 100px;
+	}
+	.itemInfo {
+		width: 33%;
+		padding: 0px 2% 2% 0px ;
+	}
+}
+@media screen and (max-width: 767px){
+	#secReserv {
+		padding: 50px 20px 70px 20px;
+	}
+	.itemInfo {
+		width: 50%;
+		padding: 0px 3% 3% 0px ;
+	}
+}
 @media screen and (max-width:650px){
 	.homePage img {
 		width: 100%;
+	}
+	.card {
+		width: calc(100% - 30px);
+		padding: 30px;
 	}
 }
 @media screen and (max-width: 535px) {
