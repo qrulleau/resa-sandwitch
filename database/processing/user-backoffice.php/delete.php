@@ -1,12 +1,7 @@
 <?php
 
-require '../resa-sandwitch/database/connexion.php';
-require (__DIR__ . '../../env.php');
-
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "reservesandwich";
+    require '../resa-sandwitch/database/connexion.php';
+    require (__DIR__ . '../../env.php');
 
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
