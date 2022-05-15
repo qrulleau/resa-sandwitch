@@ -1,6 +1,6 @@
 <?php
-
-  require '../env.php';
+  require (__DIR__ . '../../env.php');
+  // require '../env.php';
 
 try {
   global $databaseConnexion; 
