@@ -146,6 +146,9 @@ header.backoffice > .d-flex {
 body.backoffice {
 	background-color: #EEEEEE;
 }
+body.update {
+	background-color: #fff;
+}
 .background {
 	background-image: url(../assets/background.jpg);
 }
@@ -309,4 +312,27 @@ body.backoffice {
 .signin .call-to-action {
 	gap: 28px;
 	margin-top: 32px;
+}
+.update input[type=text] {
+	border-color: #BDBDBD;
+	width: 529px;
+	padding: 13px 33px;
+}
+.update label {
+	margin-bottom: 16px;
+	font-weight: 500;
+}
+.update .column {
+	margin-bottom: 76px;
+}
+.update .justify-center {
+	gap: 36px;
+	margin-top: 70px;
+}
+.update h2 {
+	margin: 76px 0 138px 0;
+}
+.update h3 {
+	margin-bottom: 16px;
+	font-weight: inherit;
 }
