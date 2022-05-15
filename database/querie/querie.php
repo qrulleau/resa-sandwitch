@@ -1,30 +1,4 @@
 <?php
-// function checkPassword($password){
-//   global $validation;
-//   if (strlen($password) >= 8) {
-//     if (preg_match("1234567890",$password)){
-//       if (preg_match("/^\w*(?=\w*\d)(?=\w*[A-Z])(?=\w*[^0-9A-Za-z])(?=\w*[a-z])\w*$/", $password)) {
-//         // echo "votre mot de passe est valie";
-//         $validation = "votre mot de passe est valide";
-//       } else {
-//         echo "votre mot de passe est invalide";
-//         $validation = "votre mot de passe n'a pas de caracteres speciale ou un numero ou n'est pas assez long, minimum 8 caracteres";
-//         die();
-//       }
-//     }
-//   }
-// }
-
-// session_start()
-
-// $user = ;
-// $prenom = $_SESSION['nomImput'];
-// $mdp = $_SESSION['mdp'];
-
-// $user = $_SESSION['user'];
-// $prenom = $_SESSION['prenom'];
-// $mdp = $_SESSION['mdp'];
-
 
 
 function checkPassword($password){
@@ -80,12 +54,62 @@ function displayHomePage() {
   $statement->execute();
   $projects = $statement->fetchAll();
 }
+function displayUtilisateurPage(){
+  global $databaseConnexion,$utilisateurs;
+  $querie = 'select * from utilisateur';
+  $statement = $databaseConnexion->prepare($querie);
+  $statement->execute();
+  $utilisateurs = $statement->fetchAll();
+}
+function displayActualPage(){
+  global $databaseConnexion,$projects;
+
+  $id = $_GET['id'];
+  $querie = 'select * from accueil where id_accueil = ?';
+  $statement = $databaseConnexion->prepare($querie);
+  $statement->execute(array($id));
+  $projects = $statement->fetchAll();
+}
 function checkUser() {
   global $databaseConnexion;
   $querie = 'select * from utilisateur where email_user';
   $statement = $databaseConnexion->prepare($querie);
   $statement->execute();
 
+}
+function UpdateIndexPage(){
+  global $databaseConnexion,$uploadResult;
+
+  $id = $_GET['id'];
+  $text_accueil = $_POST['text_accueil'];
+  $lien_pdf = $_POST['lien_pdf'];
+
+
+  if (isset($text_accueil)) {
+    $querie = 'update accueil set texte_accueil = ?, lien_pdf = ? where id_accueil = ? ';
+    $statement = $databaseConnexion->prepare($querie);
+    $statement->execute(array($text_accueil,$lien_pdf,$id));
+
+    $target_dir = "";
+    $file = $_FILES['lien_pdf']['name'];
+    $path = pathinfo($file);
+    $filename = $path['filename'];
+    $ext = 'pdf';
+    $temp_name = $_FILES['lien_pdf']['tmp_name'];
+    $path_filename_ext = $target_dir.$filename.".".$ext;
+
+    if (file_exists($path_filename_ext)) {
+      $uploadResult = "Sorry, file already exists.";
+      }else{
+      move_uploaded_file($temp_name,$path_filename_ext);
+      $uploadResult = "Congratulations! File Uploaded Successfully.";
+      }
+
+
+  }
+
+
+  
 }
 function authentification (){
 
