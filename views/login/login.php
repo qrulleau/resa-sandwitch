@@ -19,28 +19,6 @@
 <body>
   <?php require '../../component/header.php' ?>
 
-  <!-- <div class="d-flex container login">
-    <div class="t-center connexion">
-      <h2>Connectez-vous</h2>
-      <form method="post">
-        <div class="d-flex column">
-          <label for="email">Email :</label>
-          <input type="text" name="email" id="email" >
-        </div>
-        <div class="d-flex column">
-          <label for="password">Mot de passe :</label>
-          <input type="text" name="password" id="password">
-        </div>
-        <input type="submit" value="Se connecter">
-      </form>
-    </div>
-    <div class="t-center">
-      <h2>Pas encore de compte ?</h2>
-      <p>Vous etes eleves ou personnel de l'etablissement et vous n'avez pas encore de compte sur la plateforme ?</p>
-      <a class="underline" href="inscription.php">Acceder au formulaire d'inscription</a>
-    </div>
-  </div> -->
-
   <div class="background">
     <div class="login">
       <div class="container">

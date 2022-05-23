@@ -19,28 +19,6 @@
 <body>
   <?php require '../../component/header.php' ?>
 
-  <!-- <div class="d-flex container login">
-    <div class="t-center connexion">
-      <h2>Connectez-vous</h2>
-      <form method="post">
-        <div class="d-flex column">
-          <label for="email">Email :</label>
-          <input type="text" name="email" id="email" >
-        </div>
-        <div class="d-flex column">
-          <label for="password">Mot de passe :</label>
-          <input type="text" name="password" id="password">
-        </div>
-        <input type="submit" value="Se connecter">
-      </form>
-    </div>
-    <div class="t-center">
-      <h2>Pas encore de compte ?</h2>
-      <p>Vous etes eleves ou personnel de l'etablissement et vous n'avez pas encore de compte sur la plateforme ?</p>
-      <a class="underline" href="inscription.php">Acceder au formulaire d'inscription</a>
-    </div>
-  </div> -->
-
   <div class="background">
     <div class="login">
         <div class="d-flex justify-center">
@@ -50,6 +28,7 @@
               <form method="post" class="d-flex column">
                 <input type="text" name="email" id="email" placeholder="votre adresse email">
                 <input type="text" name="password" id="password" placeholder="votre mot de passe">
+                <p class="t-center error"><?php echo $loginAdminError?></p>
                 <a href="login.php" class="underline">connexion en tant qu'utilisateur</a>
                 <input class="full" type="submit" value="connexion">
               </form>
