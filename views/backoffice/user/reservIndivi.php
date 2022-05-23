@@ -121,8 +121,9 @@ error_reporting(E_ALL);
             /** Saisie des données du formulaire **/
             $saisieProjet = $databaseConnexion->prepare("INSERT INTO commande(fk_user_id, fk_sandwich_id, fk_boisson_id, fk_dessert_id, chips_com, date_heure_com, date_heure_livraison_com, annule_com) VALUES(?,?,?,?,?,?,?,?);");
             $saisieProjet->execute(array($id, $sandwichForm, $boissonForm, $dessertForm, $chipsForm, $dateTimeNow, $dateTimeForm, $annule_com));
-            header("Location: reservIndivi.php?$id");
-            echo 'commande bien passer';
+
+            header("Location: reservIndivi.php?id=$id");
+
             $sendForm = "Votre réservation a bien été enregistrée !";
         }
     }
@@ -259,7 +260,9 @@ error_reporting(E_ALL);
             </div>
 
             <!-- Formulaire pour la commande individuelle -->
-            <form id="formSaisieInfo" method="get" action="<?php echo $_SERVER['PHP_SELF'];?>" role="form">
+
+            <form id="formSaisieInfo" method="POST" role="form">
+
                 <h3>Choisissez votre repas :</h3>
                 <div class="saisieInfo">
                     <!-- Div de liste déroulante pour les sanwichs et les desserts -->
