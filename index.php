@@ -17,7 +17,6 @@ displayHomePage();
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
     <title>Document</title>
     <link rel="stylesheet" href="style/main.css">
-      <!-- CSS only -->
   </head>
   <body>
     <?php require 'component/header.php'?>

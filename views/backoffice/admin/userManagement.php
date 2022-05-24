@@ -5,8 +5,6 @@ require (__DIR__ . '../../../../database/querie/querie.php');
 
 displayUtilisateurPage();
 
-// var_dump($utilisateurs);
-
 ?>
 
 <!DOCTYPE html>
@@ -78,10 +76,10 @@ displayUtilisateurPage();
           <div class="col action">
             <div class="d-flex justify-center">
             <?php
-            echo "<a class='remove' href='../../../database/processing/admin-backoffice/update.php?id=" . $user['id_accueil'] . "'>Modifier</a>"
+            echo "<a class='remove' href='../../../database/processing/admin-backoffice/update.php?id=" . $utilisateur['id_user'] . "'>Modifier</a>"
             ?>
             <?php
-            echo "<a class='remove' href='../../../database/processing/admin-backoffice/deleting.php?id=" . $user['id_accueil'] . "'>Supprimer</a>"
+            echo "<a class='remove' href='../../../database/processing/admin-backoffice/deleting.php?id=" . $utilisateur['id_user'] . "'>Supprimer</a>"
             ?>
             </div>
           </div>

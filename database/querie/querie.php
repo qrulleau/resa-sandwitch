@@ -32,7 +32,7 @@ function verifID()
 function signinUser() {
   global $databaseConnexion,$validation,$error;
 
-  $specialCharacter = "(<|>|'|\"|[|]|!|@|%|&|%|\^|\*)";
+  $specialCharacter = "(<|>|'|\"|[|]|!|@|%|&|%|\^|\*|\@|\#|\(|\)|/|`)";
   $number = "(1|2|3|4|5|6|7|8|9|0)";
 
   $firstName = $_GET['firstName'];
@@ -54,8 +54,8 @@ function signinUser() {
     if (strlen($password) < 8){
       $error = $error . "<br> votre mot de passe doit faire au moins 8 caracteres";
     }
-    else {
-      $validation = 'votre mot de passe est valide';
+    elseif ($error == "") {
+      $validation = 'Vous etes inscrit';
 
       $password = password_hash($password, PASSWORD_ARGON2ID);
 

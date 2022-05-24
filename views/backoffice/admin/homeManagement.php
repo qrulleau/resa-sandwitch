@@ -29,7 +29,6 @@ displayHomePage();
     <?php require (__DIR__ . '../../../../component/header-backoffice.php'); ?>
 
     <div class="container">
-      <a href="../../../database/processing/user-backoffice.php/insert.php">Ajouter un utilisateur</a>
       <div class="header-tab white">
         <div class="d-flex t-center">
           <div class="col id_accueil">

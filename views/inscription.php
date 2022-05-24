@@ -1,6 +1,5 @@
 <?php
 
-
 require '../database/connexion.php';
 require '../database/querie/querie.php';
 global $validation;
@@ -51,7 +50,14 @@ signinUser();
           <label for="password">Votre mot de passe</label>
           <input type='password' id='password' name='password' value="<?php echo $passwordInput?>" placeholder="mon mot de passe" required>
           <p><?php echo $validation?></p>
-          <p class="error"><?php echo $error?></p>
+
+          <?php 
+           if (isset($error)){
+             echo "<p class='error'>$error</p>";
+           } else {
+             echo '<p></p>';
+           }  
+          ?>
         </div>
         <div class="d-flex call-to-action justify-start">
           <input type="submit" class="empty" value="je m'inscris">

@@ -205,7 +205,8 @@ body.update {
 .login {
 	padding: 100px 0 154px 0;
 }
-.login form input[type=text] {
+.login form input[type=text],
+.login form input[type=password] {
 	margin-top: 25px;
 	width: 100%;
 	padding: 9px;
@@ -258,6 +259,7 @@ body.update {
 }
 .col p {
 	padding: 15px 0;
+	line-height: 140%;
 }
 .col.action .d-flex {
 	gap: 20px;
@@ -478,6 +480,9 @@ body.update {
 	border-radius: initial;
 	padding: 11px 11px 11px 2px;
 	width: 638px;
+}
+.signin input[type=password]{
+	margin-bottom: 12px;
 }
 .empty, input.empty {
 	border: 1px solid #1F2252;
