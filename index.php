@@ -28,7 +28,7 @@ displayHomePage();
           <div>
             <p><?php echo $projects[0]['texte_accueil']?></p>
             <div class="d-flex call-to-action">
-              <a class="empty" href="http://localhost/projetFinal/views/login/login.php">commander</a>
+              <a class="empty" href="http://groupe3.lyceestvincent.fr/views/login/login.php">commander</a>
               <button class="full cafeteria">menu de la cantine</button>
             </div>
             <div class="planning">
@@ -47,7 +47,6 @@ displayHomePage();
       </div>
     </div>
 
-    <?php require 'views/histoCommandes.php'?>
     
     <?php require 'component/footer.php'?>
 

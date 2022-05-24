@@ -151,7 +151,7 @@ function authentification (){
 
 
     if (password_verify($password,$user_password)) {
-      header('location: http://localhost/projetFinal/views/backoffice/user/backoffice.php');
+      header('location: http://groupe3.lyceestvincent.fr/views/backoffice/user/backoffice.php');
       session_start();
       // $_SESSION['ident'] = $id;
     } else {
@@ -180,7 +180,7 @@ function authentificationAdmin (){
 
 
     if (password_verify($password,$password_user) && $role_user == 'a') {
-      header('location: http://localhost/projetFinal/views/backoffice/admin/backoffice.php');
+      header('location: http://groupe3.lyceestvincent.fr/views/backoffice/admin/backoffice.php');
       session_start();
     } else {
       $loginAdminError =  'mauvais login ou mot de passe';

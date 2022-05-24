@@ -5,6 +5,8 @@ require (__DIR__ . '../../../../database/querie/querie.php');
 
 displayUtilisateurPage();
 
+// var_dump($utilisateurs);
+
 ?>
 
 <!DOCTYPE html>
