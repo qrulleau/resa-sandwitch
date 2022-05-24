@@ -8,6 +8,6 @@
       </div>
       <a href="http://localhost/projetFinal/">Accueil</a>
     </div>
-    <a href="http://localhost/projetFinal/views/login/login.php">Se connecter / s'inscrire</a>
+    <a href="http://localhost/projetFinal/views/login/login.php">Se connecter / S'inscrire</a>
   </div>
 </header>

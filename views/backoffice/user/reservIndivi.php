@@ -1,7 +1,4 @@
 <?php 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
     require (__DIR__ . '../../../../database/connexion.php');
     require (__DIR__ . '../../../../database/querie/querie.php');
@@ -31,11 +28,8 @@ error_reporting(E_ALL);
     // Variable pour la disponibilité des produits
     $dispo = "Non";
 
-    // var_dump($_GET['boissonerror']);
-
     if (isset($_GET['submit'])) 
     {
-        echo 'bonjour';
         // Variable associé au formulaire
         $sandwichForm = verifyInput($_GET['selectSandwich']);
         $boissonForm = verifyInput($_GET['selectBoisson']);
@@ -48,6 +42,22 @@ error_reporting(E_ALL);
         $jourLivraison = date("w", $conversionDate);
 
         $dateTimeForm = $dateForm . " " . $timeForm;
+
+        // Requête sql pour afficher les sandwichs
+        $statement = $databaseConnexion->query("SELECT * FROM utilisateur");
+
+        // Liaison avec la BDD pour la parcourir avec le php
+        while($item = $statement->fetch())
+        {
+            if ($item['id_user']==$id)
+            {
+                if ($item['active_user']==0)
+                {
+                    $sendForm = "Votre utilisateur est désactivé, vous ne pouvez pas faire de commande !";
+                    $isSuccess = false;
+                }
+            }
+        }
 
         // Vérification des champs du formulaire et affichage des erreurs
         // Requête sql pour afficher les projets
@@ -117,7 +127,6 @@ error_reporting(E_ALL);
         var_dump($boissonForm);
         if ($isSuccess)
         {
-            $annule_com = 0;
             /** Saisie des données du formulaire **/
             $saisieProjet = $databaseConnexion->prepare("INSERT INTO commande(fk_user_id, fk_sandwich_id, fk_boisson_id, fk_dessert_id, chips_com, date_heure_com, date_heure_livraison_com, annule_com) VALUES(?,?,?,?,?,?,?,?);");
             $saisieProjet->execute(array($id, $sandwichForm, $boissonForm, $dessertForm, $chipsForm, $dateTimeNow, $dateTimeForm, $annule_com));
