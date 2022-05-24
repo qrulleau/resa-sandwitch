@@ -53,7 +53,7 @@ error_reporting(E_ALL);
       <p class="t-center"><?php echo $uploadResult?></p>
       <div class="d-flex justify-center">
         <input type="submit" value="Modifier" class="empty">
-        <a href="../../../views/backoffice/admin/backoffice.php" class="full">Retour au backoffice</a>
+        <a href="../../../views/backoffice/admin/homeManagement.php" class="full">Retour au backoffice</a>
       </div>
 
     </form>
