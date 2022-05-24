@@ -37,19 +37,19 @@ signinUser();
       <form method="get">
         <div class="d-flex column align-start">
           <label for="firstName">Votre prenom</label>
-          <input type='firstName' id='firstName' name='firstName' value="<?php echo $firstNameInput?>" placeholder="Bernard">
+          <input type='firstName' id='firstName' name='firstName' value="<?php echo $firstNameInput?>" placeholder="Bernard" required>
         </div>
         <div class="d-flex column align-start">
           <label for="lastName">Votre nom</label>
-          <input type='lastName' id='lastName' name='lastName' value="<?php echo $lastNameInput?>" placeholder="Julien">
+          <input type='lastName' id='lastName' name='lastName' value="<?php echo $lastNameInput?>" placeholder="Julien" required>
         </div>
         <div class="d-flex column align-start">
           <label for="email">Votre email</label>
-          <input type="text" id="email" name="email" value="<?php echo $emailInput?>"  placeholder="bernard.julien@gmail.com">
+          <input type="text" id="email" name="email" value="<?php echo $emailInput?>"  placeholder="bernard.julien@gmail.com" required>
         </div>
         <div class="d-flex column align-start">
           <label for="password">Votre mot de passe</label>
-          <input type='password' id='password' name='password' value="<?php echo $passwordInput?>" placeholder="mon mot de passe">
+          <input type='password' id='password' name='password' value="<?php echo $passwordInput?>" placeholder="mon mot de passe" required>
           <p><?php echo $validation?></p>
           <p class="error"><?php echo $error?></p>
         </div>
