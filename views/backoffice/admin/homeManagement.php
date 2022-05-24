@@ -3,9 +3,7 @@
 require (__DIR__ . '../../../../database/connexion.php');
 require (__DIR__ . '../../../../database/querie/querie.php');
 
-displayUtilisateurPage();
-
-// var_dump($utilisateurs);
+displayHomePage();
 
 ?>
 
@@ -35,19 +33,13 @@ displayUtilisateurPage();
       <div class="header-tab white">
         <div class="d-flex t-center">
           <div class="col id_accueil">
-            <p>id_user</p>
+            <p>id_accueil</p>
           </div>
           <div class="col texte_accueil">
-            <p>role_user</p>
+            <p>texte accueil</p>
           </div>
           <div class="col lien_pdf">
-            <p>email_user</p>
-          </div>
-          <div class="col action">
-            <p>prenom_user</p>
-          </div>
-          <div class="col action">
-            <p>nom_user</p>
+            <p>lien PDF</p>
           </div>
           <div class="col action">
             <p>action</p>
@@ -57,31 +49,25 @@ displayUtilisateurPage();
       <div class="body-tab t-center">
         
         <?php 
-          foreach ($utilisateurs as $utilisateur) {
+          foreach ($projects as $project) {
         ?>
         <div class="d-flex border">
           <div class="col id_accueil">
-            <p><?php echo $utilisateur['id_user'] ?></p>
+            <p><?php echo $project['id_accueil'] ?></p>
           </div>
           <div class="col texte_accueil">
-            <p><?php echo $utilisateur['role_user'] ?></p>
+            <p><?php echo $project['texte_accueil'] ?></p>
           </div>
           <div class="col lien_pdf">
-            <p><?php echo $utilisateur['email_user'] ?></p>
-          </div>
-          <div class="col lien_pdf">
-            <p><?php echo $utilisateur['prenom_user'] ?></p>
-          </div>
-          <div class="col lien_pdf">
-            <p><?php echo $utilisateur['nom_user'] ?></p>
+            <p><?php echo $project['lien_pdf'] ?></p>
           </div>
           <div class="col action">
             <div class="d-flex justify-center">
             <?php
-            echo "<a class='remove' href='../../../database/processing/admin-backoffice/update.php?id=" . $user['id_accueil'] . "'>Modifier</a>"
+            echo "<a class='remove' href='../../../database/processing/admin-backoffice/update.php?id=" . $project['id_accueil'] . "'>Modifier</a>"
             ?>
             <?php
-            echo "<a class='remove' href='../../../database/processing/admin-backoffice/deleting.php?id=" . $user['id_accueil'] . "'>Supprimer</a>"
+            echo "<a class='remove' href='../../../database/processing/admin-backoffice/deleting.php?id=" . $project['id_accueil'] . "'>Supprimer</a>"
             ?>
             </div>
           </div>

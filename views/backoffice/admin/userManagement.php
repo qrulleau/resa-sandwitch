@@ -1,59 +1,97 @@
 <?php 
-    require '../../../database/connexion.php';
+
+require (__DIR__ . '../../../../database/connexion.php');
+require (__DIR__ . '../../../../database/querie/querie.php');
+
+displayUtilisateurPage();
+
+// var_dump($utilisateurs);
+
 ?>
 
 <!DOCTYPE html>
-<html>
-    <head>
-      <title>Afficher un utilisateur</title>
-      <meta charset="utf-8"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
-      <script src="https://kit.fontawesome.com/568733c487.js" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-      <link rel="stylesheet" href="../../../style/affichage.css">
-    </head>
-    
-    <body>
-      <h1 class="text-logo"><i class="fa-solid fa-user"></i>Gestion des utilisateurs<i class="fa-solid fa-user"></i></h1>
-      <div class="container admin">
-        <div class="row">
-          <div class="col-md-6">
-            <h1 class="container-fluid titre"><strong>Voir tous les utilisateurs</strong></h1>
-            <br>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet"> 
+  <title>Document</title>
+  <link rel="stylesheet" href="../../../style/main.css">
+  <style>
+    .backoffice .container {
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body class="backoffice user">
+  <div class="d-flex align-start">
+    <?php require (__DIR__ . '../../../../component/header-backoffice.php'); ?>
+
+    <div class="container">
+      <a href="../../../database/processing/user-backoffice.php/insert.php">Ajouter un utilisateur</a>
+      <div class="header-tab white">
+        <div class="d-flex t-center">
+          <div class="col id_accueil">
+            <p>id_user</p>
+          </div>
+          <div class="col texte_accueil">
+            <p>role_user</p>
+          </div>
+          <div class="col lien_pdf">
+            <p>email_user</p>
+          </div>
+          <div class="col action">
+            <p>prenom_user</p>
+          </div>
+          <div class="col action">
+            <p>nom_user</p>
+          </div>
+          <div class="col action">
+            <p>action</p>
+          </div>
+        </div>
+      </div>
+      <div class="body-tab t-center">
+        
+        <?php 
+          foreach ($utilisateurs as $utilisateur) {
+        ?>
+        <div class="d-flex border">
+          <div class="col id_accueil">
+            <p><?php echo $utilisateur['id_user'] ?></p>
+          </div>
+          <div class="col texte_accueil">
+            <p><?php echo $utilisateur['role_user'] ?></p>
+          </div>
+          <div class="col lien_pdf">
+            <p><?php echo $utilisateur['email_user'] ?></p>
+          </div>
+          <div class="col lien_pdf">
+            <p><?php echo $utilisateur['prenom_user'] ?></p>
+          </div>
+          <div class="col lien_pdf">
+            <p><?php echo $utilisateur['nom_user'] ?></p>
+          </div>
+          <div class="col action">
+            <div class="d-flex justify-center">
             <?php
-
-
-              $statement = $db->query("SELECT * FROM utilisateur");
-              $statement->execute();
-              while ($item = $statement->fetch())
-              {
-                echo "<div class='test2'>";
-                // Affichage des données de la BDD dans le tableau à modifier ou supprimer
-                  echo "<div class='affichage'>";
-                      echo "<p>" . $item['id_user'] . "</p>";
-                      echo "<p>" . $item['role_user'] . "</p>";
-                      echo "<p>" . $item['email_user'] . "</p>";
-                      echo "<p>" . $item['password_user'] . "</p>";
-                      echo "<p>" . $item['nom_user'] . "</p>";
-                      echo "<p>" . $item['prenom_user'] . "</p>";
-                      echo "<p>" . $item['active_user'] . "</p>";
-                  echo "</div>"; 
-                echo "</div>";
-              }
+            echo "<a class='remove' href='../../../database/processing/admin-backoffice/update.php?id=" . $user['id_accueil'] . "'>Modifier</a>"
             ?>
-            <br>
-            <div class="form-actions">
-              <a type="submit" class="btn btn-success" href="/database/processing/user-backoffice.php/insert.php" target=_blank><span class="bi-plus"></span> Ajouter</a>
-              <a type="submit" class="btn btn-danger" href="/database/processing/user-backoffice.php/modif.php" target=_blank><span class="bi-pencil"></span> Modifier</a>
-              <a type="submit" class="btn btn-warning" href="/views/backoffice/user/index.html" target=_blank><span class="bi-trash"></span> Supprimer</a>
-              <a class="btn btn-primary" href="index.php" target=_blank><span class="bi-arrow-left"></span> Retour</a>
+            <?php
+            echo "<a class='remove' href='../../../database/processing/admin-backoffice/deleting.php?id=" . $user['id_accueil'] . "'>Supprimer</a>"
+            ?>
             </div>
           </div>
         </div>
-      </div>   
-    </body>
+        <?php
+          }
+        ?>
+        </div>
+      </div>
+    </div>
+  <script src="../../script/main.js"></script>
+</body>
 </html>
-
