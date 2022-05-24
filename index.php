@@ -22,7 +22,7 @@ displayHomePage();
   <body>
     <?php require 'component/header.php'?>
     <div class="homePage">
-      <h2 class="t-center">Bienvenue sur la sandwicherie du<br>lycee st-vincent</h2>
+      <h2 class="t-center">Bienvenue sur la sandwicherie du<br>lycée Saint-Vincent</h2>
       <div class="container">
         <div class="d-flex">
           <div>
@@ -32,10 +32,10 @@ displayHomePage();
               <button class="full cafeteria">menu de la cantine</button>
             </div>
             <div class="planning">
-              <h3>informations</h3>
-              <p>Du lundi au dimanche, de 12h30 à 13h30</p>
-              <p>Rez-de-chaussée du batiment Saint-Louis</p>
-              <p>Sandwichs faits sur place par nos chefs / à emporter/  formule déjeuner</p>
+              <h3>Informations</h3>
+              <p>Du lundi au vendredi, de 12h30 à 13h30.</p>
+              <p>Rez-de-chaussée du batiment Saint-Vincent.</p>
+              <p>Sandwich fait sur place par nos chefs / à emporter/ formule déjeuner.</p>
             </div>
           </div>
           <div>

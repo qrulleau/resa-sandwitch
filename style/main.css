@@ -371,6 +371,7 @@ body.update {
 	border-right: none;
 	border-left: none;
 	border-bottom: 1px solid black;
+	border-radius: 0;
 	text-align: left;
 }
 .optionMenu:active {

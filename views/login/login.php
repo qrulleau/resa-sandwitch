@@ -32,10 +32,10 @@
               <h2>Se connecter</h2>
               <div class="span"></div>
               <form method="post" class="d-flex column">
-                <input type="text" name="email" id="email" placeholder="votre adresse email">
-                <input type="text" name="password" id="password" placeholder="votre mot de passe">
+                <input type="text" name="email" id="email" placeholder="Votre adresse e-mail">
+                <input type="password" name="password" id="password" placeholder="Votre mot de passe">
                 <a href="login-admin.php" class="underline">connexion en tant qu'administrateur</a>
-                <input class="full" type="submit" value="connexion">
+                <input class="full" type="submit" value="Connexion">
               </form>
             </div>
           </div>

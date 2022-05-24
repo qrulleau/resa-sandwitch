@@ -154,7 +154,9 @@ function authentification (){
       header('location: http://groupe3.lyceestvincent.fr/views/backoffice/user/backoffice.php');
       session_start();
       // $_SESSION['ident'] = $id;
-    } else {
+    } 
+    else 
+    {
       echo 'mauvais login ou mot de passe';;
     }
 
